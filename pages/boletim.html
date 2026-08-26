@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boletim</title>
+    <link rel="stylesheet" href="../style/boletim.css">
+</head>
+<body>
+    <div>
+        <button id="voltar"><img src="../image/voltarbutton.png" alt="Voltar"></button>
+        <h1>Boletim</h1>
+    </div>
+
+    <div id="firstLog">
+        <form id="formulario">
+            <p id="bemvindo"></p>
+            <p>Qual a média cobrada pela sua instituição?</p>
+            <input type="number" id="media"> <br>
+
+            <button>Enviar</button>
+        </form>
+    </div>
+
+    <div id="criadorBoletim">
+        <button id="adicionarNota">Adicionar Nota</button>
+    </div>
+    <div id="resultadoBoletim">
+        <table>
+            <thead>
+                <tr>
+                    <th>Matéria</th>
+                    <th>1º Bimestre</th>
+                    <th>2º Bimestre</th>
+                    <th>3º Bimestre</th>
+                    <th>4º Bimestre</th>
+                    <th>Média final</th>
+                    <th>Pontos Necessários</th>
+                </tr>
+            </thead>
+            <tbody id="planilhaNota">
+
+            </tbody>
+        </table>
+    </div>
+
+    <script src="../scripts/boletim.js"></script>
+</body>
+</html>
