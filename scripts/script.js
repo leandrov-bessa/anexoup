@@ -125,3 +125,5 @@ function fazerLogin(){
         window.location.href = "menu.html"
     }
 }
+
+//Botão de Cadastre-se no "Entrar" caso erre a senha.

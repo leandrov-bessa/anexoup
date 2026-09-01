@@ -1,0 +1,236 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+:root {
+    --azul: #5b5ce2;
+    --azul-escuro: #4546c7;
+    --fundo: #f5f6fc;
+    --card: #ffffff;
+    --texto: #20223a;
+    --texto-suave: #6b6f85;
+    --borda: #e4e6f0;
+    --vermelho: #e94f63;
+    --sombra: 0 12px 30px rgba(34, 37, 70, 0.1);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #f1f2ff, #f9f9fc);
+    color: var(--texto);
+    font-family: "Inter", Arial, sans-serif;
+}
+
+body > h1,
+body > p,
+body > div {
+    width: min(100%, 800px);
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#voltar {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    display: grid;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    place-items: center;
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    background: var(--card);
+    box-shadow: 0 5px 15px rgba(34, 37, 70, 0.08);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#voltar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(34, 37, 70, 0.14);
+}
+
+#voltar img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+}
+
+h1 {
+    margin-top: 38px;
+    margin-bottom: 10px;
+    font-size: clamp(2rem, 5vw, 3rem);
+    letter-spacing: -1.5px;
+}
+
+body > p {
+    max-width: 650px;
+    margin-top: 0;
+    margin-bottom: 32px;
+    color: var(--texto-suave);
+    line-height: 1.6;
+}
+
+button {
+    border: none;
+    border-radius: 10px;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+#criar,
+#adicionar {
+    padding: 13px 18px;
+    background: var(--azul);
+    color: #fff;
+    box-shadow: 0 6px 14px rgba(91, 92, 226, 0.25);
+}
+
+#criar:hover,
+#adicionar:hover {
+    background: var(--azul-escuro);
+}
+
+#formCriar {
+    display: grid;
+    gap: 14px;
+    margin-top: 18px;
+    padding: 22px;
+    border: 1px solid var(--borda);
+    border-radius: 16px;
+    background: var(--card);
+    box-shadow: var(--sombra);
+}
+
+#formCriar[hidden] {
+    display: none;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+    outline: none;
+    background: #fafaff;
+    color: var(--texto);
+    font: inherit;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+input:focus,
+textarea:focus {
+    border-color: var(--azul);
+    box-shadow: 0 0 0 4px rgba(91, 92, 226, 0.12);
+}
+
+#adicionar {
+    justify-self: start;
+}
+
+#resultados {
+    display: grid;
+    gap: 16px;
+    margin-top: 28px;
+}
+
+#resultados > div {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 10px 12px;
+    align-items: start;
+    padding: 22px;
+    border: 1px solid var(--borda);
+    border-radius: 16px;
+    background: var(--card);
+    box-shadow: var(--sombra);
+}
+
+#resultados h2,
+#resultados input {
+    grid-column: 1 / -1;
+    margin: 0;
+}
+
+#resultados h2 {
+    font-size: 1.15rem;
+}
+
+#resultados p,
+#resultados textarea {
+    grid-column: 1 / -1;
+    margin: 0 0 8px;
+    color: var(--texto-suave);
+    line-height: 1.5;
+}
+
+#resultados button {
+    padding: 9px 13px;
+    background: #eef0ff;
+    color: var(--azul-escuro);
+}
+
+#resultados button:hover {
+    background: #dedfff;
+}
+
+/* O botão Excluir é o primeiro botão de cada tarefa */
+#resultados button:first-of-type {
+    background: #fff0f2;
+    color: var(--vermelho);
+}
+
+#resultados button:first-of-type:hover {
+    background: #ffdfe4;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 24px 16px;
+    }
+
+    #voltar {
+        position: static;
+        margin-bottom: 22px;
+    }
+
+    h1 {
+        margin-top: 0;
+    }
+
+    #adicionar {
+        width: 100%;
+    }
+
+    #resultados > div {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    #resultados h2,
+    #resultados input,
+    #resultados p,
+    #resultados textarea {
+        grid-column: 1 / -1;
+    }
+
+    #resultados button {
+        width: 100%;
+    }
+}

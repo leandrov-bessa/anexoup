@@ -257,4 +257,4 @@ function editarMateria(materia, linha, botaoEditar, botaoExcluir){
 }
 
 //Organizar boletim por ordem alfabética
-//Não permitir matérias de mesmo nome
+//PROBLEMA DE CSS = toda vez que é adicionado uma nova nota, a div fica maior

@@ -7,7 +7,7 @@
 
     <title>Tarefas</title>
 
-    <link rel="stylesheet" href="../style/workinprogress.css">
+    <link rel="stylesheet" href="../style/tarefas.css">
 </head>
 
 <body>
@@ -16,30 +16,21 @@
         <img src="../image/voltarbutton.png" alt="Voltar">
     </button>
 
-    <main class="container">
+    <h1>TaskManager</h1>
+    <p>Crie anotações e faça lembretes! Todas as informações serão salvas para que você possa revisá-las.</p>
 
-        <section class="card">
+    <div>
+        <button id="criar">Criar Nova Tarefa</button>
+        <form id="formCriar">
+            <input type="text" placeholder="Título" id="titulo">
+            <textarea placeholder="Descrição" id="descricao"></textarea>
+            <button id="adicionar">Adicionar Tarefa</button>
+        </form>
+    </div>
 
-            <div class="icone">📋</div>
+    <div id="resultados"></div>
 
-            <h1>Tarefas</h1>
-
-            <p>
-                Organize suas tarefas escolares, acompanhe seus
-                trabalhos e mantenha seus estudos em dia.
-            </p>
-
-            <div class="progresso">
-                <div class="barra"></div>
-            </div>
-
-            <span class="status">Em construção</span>
-
-        </section>
-
-    </main>
-
-    <script src="../scripts/workinprogress.js"></script>
+    <script src="../scripts/tarefas.js"></script>
 
 </body>
 
