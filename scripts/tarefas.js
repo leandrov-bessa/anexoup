@@ -115,3 +115,15 @@ function resultado(){
 }
 
 resultado()
+
+// Dar um id para cada tarefa. Hoje removo com tarefas.indexOf(tarefa), o que funciona no estado atual, mas um ID torna editar/excluir mais confiável.
+
+// Usar submit no formulário, em vez de depender do clique no botão “Adicionar”. Assim, Enter também envia o formulário.
+
+// Criar uma função única para salvar tarefas, evitando repetir localStorage.setItem(...).
+
+// Trocar alert() por uma mensagem visual na página.
+
+// Adicionar estado vazio: “Nenhuma tarefa cadastrada”.
+
+// Adicionar confirmação antes de excluir.

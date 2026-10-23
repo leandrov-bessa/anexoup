@@ -44,3 +44,5 @@ usuario = JSON.parse(usuario)
 
 const entrada = document.getElementById("entrada")
 entrada.textContent = `Bem-vindo, ${usuario.apelido}`
+
+//BOTÃO DE SAIR (DESLOGAR)
