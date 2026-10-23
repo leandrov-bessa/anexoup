@@ -1,0 +1,309 @@
+#voltar {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+#voltar img {
+    width: 25px;
+    height: 25px;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+:root {
+    --primary: #5b5bd6;
+    --primary-dark: #4242b6;
+    --success: #168a55;
+    --text: #182033;
+    --muted: #667085;
+    --surface: #ffffff;
+    --background: #f4f6fb;
+    --border: #e5e7ef;
+    --shadow: 0 16px 40px rgba(32, 42, 80, 0.1);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    padding: 32px clamp(16px, 5vw, 72px);
+    background:
+        radial-gradient(circle at top right, #dcdcff 0, transparent 28rem),
+        var(--background);
+    color: var(--text);
+    font-family: "Inter", Arial, sans-serif;
+}
+
+/* Cabeçalho */
+body > div:first-child {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    max-width: 1200px;
+    margin: 0 auto 32px;
+}
+
+h1 {
+    margin: 0;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    letter-spacing: -0.06em;
+}
+
+#voltar {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--surface);
+    box-shadow: 0 4px 12px rgba(20, 25, 50, 0.06);
+    cursor: pointer;
+    transition: transform 0.2s, border-color 0.2s, background 0.2s;
+}
+
+#voltar:hover {
+    transform: translateX(-3px);
+    border-color: var(--primary);
+    background: #f5f5ff;
+}
+
+#voltar img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+}
+
+/* Cartões */
+#firstLog,
+#criadorBoletim,
+#resultadoBoletim {
+    max-width: 1200px;
+    margin: 0 auto 24px;
+    border: 1px solid rgba(229, 231, 239, 0.9);
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: var(--shadow);
+}
+
+#firstLog {
+    max-width: 560px;
+    padding: clamp(24px, 5vw, 42px);
+}
+
+#formulario {
+    display: grid;
+    gap: 14px;
+}
+
+#formulario p {
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+#bemvindo {
+    color: var(--text) !important;
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+
+#criadorBoletim {
+    padding: 22px;
+}
+
+/* Formulário para adicionar matéria, criado pelo JavaScript */
+#criadorBoletim form {
+    display: grid;
+    grid-template-columns: minmax(180px, 1.4fr) repeat(4, minmax(105px, 1fr)) auto;
+    gap: 12px;
+    margin-top: 16px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
+}
+
+input {
+    width: 100%;
+    min-height: 46px;
+    padding: 0 14px;
+    outline: none;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: #fff;
+    color: var(--text);
+    font: inherit;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input::placeholder {
+    color: #98a2b3;
+}
+
+input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(91, 91, 214, 0.14);
+}
+
+/* Botões */
+button {
+    min-height: 46px;
+    padding: 0 18px;
+    border: 0;
+    border-radius: 10px;
+    background: var(--primary);
+    color: white;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+}
+
+button:hover:not(:disabled) {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(91, 91, 214, 0.26);
+}
+
+button:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+#formulario button,
+#criadorBoletim > button {
+    width: fit-content;
+    min-width: 140px;
+    margin-top: 6px;
+}
+
+/* Tabela */
+#resultadoBoletim {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    min-width: 850px;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 16px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+}
+
+th {
+    background: #f7f7ff;
+    color: #4d4db2;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+th:first-child,
+td:first-child {
+    padding-left: 24px;
+    text-align: left;
+}
+
+td {
+    color: #475467;
+    font-size: 0.92rem;
+}
+
+tbody tr {
+    transition: background 0.2s;
+}
+
+tbody tr:hover {
+    background: #fafaff;
+}
+
+tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+/* Botões de editar, excluir e confirmar criados pelo JavaScript */
+td button {
+    display: inline-grid;
+    place-items: center;
+    min-width: 36px;
+    min-height: 36px;
+    padding: 0;
+    border-radius: 9px;
+    background: #f0f1ff;
+    color: var(--primary);
+    box-shadow: none;
+}
+
+td button:hover:not(:disabled) {
+    background: #e2e3ff;
+    box-shadow: none;
+}
+
+td input {
+    min-height: 38px;
+    min-width: 78px;
+    padding: 0 8px;
+    text-align: center;
+}
+
+/* Ajustes para celular */
+@media (max-width: 760px) {
+    body {
+        padding: 20px 14px;
+    }
+
+    body > div:first-child {
+        margin-bottom: 22px;
+    }
+
+    #criadorBoletim {
+        padding: 16px;
+    }
+
+    #criadorBoletim form {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    #criadorBoletim form input:first-child,
+    #criadorBoletim form button {
+        grid-column: 1 / -1;
+    }
+
+    #resultadoBoletim {
+        border-radius: 14px;
+    }
+
+    th,
+    td {
+        padding: 13px 12px;
+    }
+}
+
+@media (max-width: 400px) {
+    #criadorBoletim form {
+        grid-template-columns: 1fr;
+    }
+}
+
+[hidden] {
+    display: none !important;
+}
+
+td:last-child > button[data-materia]:hover:not(:disabled) {
+    background: #ff0c0c;
+    color: #dc2626;
+}
